@@ -1,6 +1,5 @@
 package com.svalero.shoesapp.contract;
 
-import com.svalero.airadmin.domain.Airplane;
 import com.svalero.shoesapp.domain.Shop;
 
 import java.util.List;
@@ -18,7 +17,7 @@ public interface ShopListContract {
     }
 
     interface View {
-        void listAirplane(List<Shop> shop);
+        void listShop(List<Shop> shop);
         void showMessage(int stringId);
 
         void showMessage(String message);

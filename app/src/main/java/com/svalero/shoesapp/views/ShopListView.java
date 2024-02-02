@@ -15,6 +15,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import com.svalero.shoesapp.IndexView;
 import com.svalero.shoesapp.R;
 import com.svalero.shoesapp.adapter.ShopAdapter;
 import com.svalero.shoesapp.contract.ShopListContract;
@@ -35,11 +36,11 @@ public class ShopListView extends AppCompatActivity implements ShopListContract.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_airplane_list);
+        setContentView(R.layout.shop_list);
 
         shop = new ArrayList<>();
 
-        RecyclerView recyclerView = findViewById(R.id.airplane_list);
+        RecyclerView recyclerView = findViewById(R.id.shop_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         adapter = new ShopAdapter(shop,this);
@@ -74,13 +75,13 @@ public class ShopListView extends AppCompatActivity implements ShopListContract.
         presenter.loadAllShop();
     }
 
-    public void goRegisterAirplane(View view) {
+    public void goRegisterShop(View view) {
         Intent intent = new Intent(this, ShopRegisterView.class);
         startActivity(intent);
     }
 
     @Override
-    public void listAirplane(List<Shop> shop) {
+    public void listShop(List<Shop> shop) {
         this.shop.clear();
         this.shop.addAll(shop);
         adapter.notifyDataSetChanged();
@@ -95,23 +96,13 @@ public class ShopListView extends AppCompatActivity implements ShopListContract.
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.volver) {
+        if (item.getItemId() == R.id.home) {
             Intent intent = new Intent(this, IndexView.class);
             startActivity(intent);
             return true;
         }
-        if (item.getItemId() == R.id.airports) {
-            Intent intent = new Intent(this, AirportListView.class);
-            startActivity(intent);
-            return true;
-        }
-        if (item.getItemId() == R.id.airplanes) {
-            Intent intent = new Intent(this, AirplaneListView.class);
-            startActivity(intent);
-            return true;
-        }
-        if (item.getItemId() == R.id.fav_airplanes) {
-            Intent intent = new Intent(this, FavoritesAirplaneListView.class);
+        if (item.getItemId() == R.id.shop) {
+            Intent intent = new Intent(this, ShopListView.class);
             startActivity(intent);
             return true;
         }

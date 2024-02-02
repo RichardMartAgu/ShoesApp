@@ -1,9 +1,9 @@
 package com.svalero.shoesapp.model;
 
-import static android.os.Build.VERSION_CODES.R;
 
 import android.util.Log;
 
+import com.svalero.shoesapp.R;
 import com.svalero.shoesapp.api.ShopApi;
 import com.svalero.shoesapp.api.ShopInterface;
 import com.svalero.shoesapp.contract.ShopDeleteContract;

@@ -1,6 +1,5 @@
 package com.svalero.shoesapp.model;
 
-import static android.os.Build.VERSION_CODES.R;
 import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.net.HttpURLConnection.HTTP_NO_CONTENT;
@@ -9,6 +8,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.svalero.shoesapp.R;
 import com.svalero.shoesapp.api.ShopApi;
 import com.svalero.shoesapp.api.ShopInterface;
 import com.svalero.shoesapp.contract.ShopEditContract;

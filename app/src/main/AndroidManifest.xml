@@ -12,8 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoesApp"
         tools:targetApi="31">
+        <activity android:name=".views.ShopListView"
+            android:label="@string/newAirport">
+        </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".views.ShopRegisterView"
+            android:label="@string/editAirplane">
+        </activity>
+        <activity
+            android:name=".views.ShopEdit"
+            android:label="@string/editAirplane">
+        </activity>
+        <activity
+            android:name=".views.ShopDetailsView"
+            android:label="@string/editAirplane">
+        </activity>
+
+
+        <activity
+            android:name=".IndexView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

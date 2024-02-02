@@ -1,3 +1,70 @@
 <resources>
     <string name="app_name">ShoesApp</string>
+    <string name="airports">Aeropuertos</string>
+    <string name="inactive" >Sin actividad</string>
+    <string name="active" >Activo</string>
+    <string name="here" >Aquí</string>
+    <string name="details">Detalles</string>
+    <string name="airportList">Lista de aeropuertos</string>
+    <string name="airplaneList">Lista de aviones</string>
+    <string name="addAirport">Crear nuevo aeropuerto</string>
+    <string name="go_register_button_description">Botón para ir a la pantalla de registro</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="foundationYear">Año de fundación</string>
+    <string name="foundationYearEdit">Año de fundación -> AAAA-MM-DD</string>
+    <string name="latitude">Latitud</string>
+    <string name="longitude">Longitud</string>
+    <string name="city">Ciudad</string>
+    <string name="newAirport">Registrar nuevo aeropuerto</string>
+    <string name="newAirplane">Registrar nuevo avión</string>
+    <string name="register">Registrar</string>
+    <string name="name">Nombre</string>
+    <string name="editAirport">Editar aeropuerto</string>
+    <string name="editAirplane">Editar avión</string>
+    <string name="airportDetails">Detalles del aeropuerto</string>
+    <string name="airplaneDetails">Detalles del avión</string>
+    <string name="model">modelo</string>
+    <string name="titleNewAirplane">Registrar nuevo avión</string>
+    <string name="manufacturingDate">Fecha de montaje </string>
+    <string name="manufacturingDateEdit">Fecha de montaje -> AAAA-MM-DD</string>
+    <string name="passengerCapacity">Capacidad de pasajeros</string>
+    <string name="maxSpeed">Velocidad máxima</string>
+    <string name="airplanes">Aviones</string>
+    <string name="airlineId">Id Aerolinea asociada</string>
+    <string name="airline_id">Airline Id</string>
+    <string name="list_of_favorite_airplanes">Lista de aviones favoritos</string>
+    <string name="favorite">Aviones favoritos</string>
+    <string name="comment">Comentario</string>
+    <string name="write">Escribe un nuevo comentario aquí…</string>
+    <string name="commentButton">Guardar</string>
+
+    <!--Errors-->
+    <string name="error_unknown">Error desconocido</string>
+    <string name="error_to_delete">Error al borrar</string>
+    <string name="error_search_by_id">Error al buscar por Id</string>
+    <string name="error_server">Se ha producido un error al conectar con el servidor</string>
+    <string name="error_validation">Error de validación en los datos de entrada</string>
+    <string name="error_airplane_not_found">Avión no encontrado</string>
+    <string name="error_airport_not_found">Avión no encontrado</string>
+
+
+    <!--Snack-->
+    <string name="register_ok" >Registro realizado con éxito</string>
+    <string name="edit_ok" >Edición relizada con éxito</string>
+    <string name="question_delete" >Seguro que quiere borrar el registro?</string>
+    <string name="question_edit" >Seguro que quiere edit el registro?</string>
+    <string name="question_delete_button" >Borrar definitivamente</string>
+    <string name="question_edit_button" >Editar definitivamente</string>
+    <string name="airplane_delete_sucefull" >Avión borrado con éxito</string>
+    <string name="airport_delete_sucefull" >Aeropuerto borrado con éxito</string>
+    <string name="field_incomplete" >Por favor, completa todos los campos</string>
+    <string name="go_list" >Ir a la lista</string>
+    <string name="is_favorite" >Es favorito</string>
+    <string name="not_favorite" >No es favorito</string>
+    <string name="add_comment" >Comentario guardado</string>
+    <string name="error_shop_not_found" >Registro no encontrado</string>
+
+
+
 </resources>

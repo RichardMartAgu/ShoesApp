@@ -1,13 +1,8 @@
 package com.svalero.shoesapp.presenter;
 
-import static android.os.Build.VERSION_CODES.R;
-
 import android.content.Context;
 
-import com.svalero.airadmin.R;
-import com.svalero.airadmin.contract.airplanesContracts.AirplaneRegisterContract;
-import com.svalero.airadmin.domain.Airplane;
-import com.svalero.airadmin.model.airplanesModels.AirplaneRegisterModel;
+import com.svalero.shoesapp.R;
 import com.svalero.shoesapp.contract.ShopRegisterContract;
 import com.svalero.shoesapp.domain.Shop;
 import com.svalero.shoesapp.model.ShopRegisterModel;

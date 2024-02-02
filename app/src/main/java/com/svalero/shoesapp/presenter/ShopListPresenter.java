@@ -29,7 +29,7 @@ public class ShopListPresenter implements ShopListContract.Presenter, ShopListCo
 
 
     @Override
-    public void loadAllShops() {
+    public void loadAllShop() {
         model.loadAllShop(this);
     }
 }

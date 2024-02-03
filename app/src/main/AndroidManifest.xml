@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,24 +16,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoesApp"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true">
+
         <activity android:name=".views.ShopListView"
-            android:label="@string/newAirport">
+            android:label="Lista de Tiendas">
         </activity>
         <activity
             android:name=".views.ShopRegisterView"
-            android:label="@string/editAirplane">
+            android:label="Registrar Tienda">
         </activity>
         <activity
-            android:name=".views.ShopEdit"
-            android:label="@string/editAirplane">
+            android:name=".views.ShopEditView"
+            android:label="Editar Tienda">
         </activity>
         <activity
             android:name=".views.ShopDetailsView"
-            android:label="@string/editAirplane">
+            android:label="Detalles Tienda">
         </activity>
-
-
         <activity
             android:name=".IndexView"
             android:exported="true">

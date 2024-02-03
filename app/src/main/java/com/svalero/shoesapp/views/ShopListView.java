@@ -43,7 +43,7 @@ public class ShopListView extends AppCompatActivity implements ShopListContract.
         RecyclerView recyclerView = findViewById(R.id.shop_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
-        adapter = new ShopAdapter(shop,this);
+        adapter = new ShopAdapter(shop);
         recyclerView.setAdapter(adapter);
 
         presenter = new ShopListPresenter(this);
@@ -71,7 +71,6 @@ public class ShopListView extends AppCompatActivity implements ShopListContract.
     @Override
     protected void onResume() {
         super.onResume();
-
         presenter.loadAllShop();
     }
 
@@ -123,6 +122,5 @@ public class ShopListView extends AppCompatActivity implements ShopListContract.
         View view = findViewById(R.id.coordinatorLayout);
         Snackbar.make(view, getResources().getString(stringId), Snackbar.LENGTH_SHORT).show();
     }
-
 
 }

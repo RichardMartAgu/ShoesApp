@@ -22,7 +22,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopHolder> {
     private List<Shop> shop;
 
 
-    public ShopAdapter(List<Shop> shop, ShopListView shopListView) {
+    public ShopAdapter(List<Shop> shop) {
         this.shop = shop;
 
     }
@@ -38,10 +38,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ShopAdapter.ShopHolder holder, int position) {
-        Shop airport = this.shop.get(position);
+        Shop shop = this.shop.get(position);
 
-        holder.shopId.setText(String.valueOf(airport.getId()));
-        holder.shopName.setText(airport.getName());
+        holder.shopId.setText(String.valueOf(shop.getId()));
+        holder.shopName.setText(shop.getName());
     }
 
     @Override
@@ -63,16 +63,16 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopHolder> {
             shopId = view.findViewById(R.id.shop_item_id);
             shopName = view.findViewById(R.id.shop_item_name);
             detailsButton = view.findViewById(R.id.button_details_shop);
-            detailsButton.setOnClickListener(v -> goDetailsAirport(view));
+            detailsButton.setOnClickListener(v -> goDetailsShop(view));
 
         }
 
     }
 
-    public void goDetailsAirport(View itemView) {
-        long airportId = Long.parseLong(((TextView) itemView.findViewById(R.id.shop_item_id)).getText().toString());
+    public void goDetailsShop(View itemView) {
+        long shopID = Long.parseLong(((TextView) itemView.findViewById(R.id.shop_item_id)).getText().toString());
         Intent intent = new Intent(itemView.getContext(), ShopDetailsView.class);
-        intent.putExtra("airport_item_id", airportId);
+        intent.putExtra("shop_item_id", shopID);
         itemView.getContext().startActivity(intent);
     }
 }

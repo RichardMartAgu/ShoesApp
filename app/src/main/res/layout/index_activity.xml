@@ -27,13 +27,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tiendas"
         android:layout_marginTop="32dp"
-        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:onClick="goListAirport"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:paddingTop="12dp"
+        android:paddingEnd="16dp"
         android:paddingBottom="12dp"
-        android:gravity="center"/>
+        android:text="Tiendas"
+        android:textColor="@android:color/black" />
 
 </LinearLayout>

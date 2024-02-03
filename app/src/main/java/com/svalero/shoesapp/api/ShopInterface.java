@@ -23,9 +23,9 @@ public interface ShopInterface {
     @POST("shop")
     Call<Shop> addShop(@Body Shop shop);
 
-    @DELETE("shops/{shopsId}")
+    @DELETE("shop/{shopId}")
     Call<Shop> deleteShopById(@Path("shopId") long shopId);
 
-    @PUT("shops/{shopsId}")
+    @PUT("shop/{shopId}")
     Call<Shop> editShopById(@Path("shopId") long shopId, @Body Shop shop);
 }

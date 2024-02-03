@@ -19,9 +19,9 @@
             <androidx.cardview.widget.CardView
 
                 android:id="@+id/cardView"
-                android:layout_width="396dp"
-                android:layout_height="330dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="402dp"
+                android:layout_height="243dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="10dp"
                 android:elevation="20dp"
                 android:radius="20dp"
@@ -32,13 +32,13 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:padding="20dp">
 
                     <TextView
                         android:id="@+id/shop_details_name"
                         android:layout_width="wrap_content"
-                        android:layout_height="27dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:text="TextView"
                         android:textSize="20sp"
@@ -47,64 +47,44 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/shop_details_city"
-                        android:layout_width="wrap_content"
-                        android:layout_height="27dp"
-                        android:text="TextView"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textViewShop3" />
-
-                    <TextView
-                        android:id="@+id/textViewShop3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="27dp"
-                        android:layout_marginTop="30dp"
-                        android:text="Nombre"
+                        android:id="@+id/textViewShop"
+                        android:layout_width="45dp"
+                        android:layout_height="22dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Latitud"
                         android:textColor="#1F9997"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/shop_details_id" />
 
                     <TextView
-                        android:id="@+id/textViewShop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_marginEnd="60dp"
-                        android:text="Latitud"
-                        android:textColor="#1F9997"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/shop_details_latitude"
-                        app:layout_constraintTop_toTopOf="@+id/textViewShop3" />
-
-                    <TextView
                         android:id="@+id/textViewShop2"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginEnd="60dp"
+                        android:layout_marginTop="10dp"
                         android:text="Longitud"
                         android:textColor="#1F9997"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        tools:layout_editor_absoluteY="141dp" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shop_details_latitude" />
 
                     <Button
                         android:id="@+id/shop_delete_buton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginEnd="16dp"
                         android:backgroundTint="#DD2C00"
+                        android:onClick="deleteOneShop"
                         android:text="Eliminar"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/shop_edit_buton" />
 
                     <TextView
                         android:id="@+id/shop_details_latitude"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
-                        app:layout_constraintStart_toStartOf="@+id/textViewShop2"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewShop" />
 
                     <TextView
@@ -129,19 +109,22 @@
                         android:id="@+id/shop_edit_buton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="20dp"
                         android:backgroundTint="#FF6D00"
+                        android:onClick="goEditOneShop"
                         android:text="Editar"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shop_details_longitude" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <com.mapbox.maps.MapView
                 android:id="@+id/add_mapViewDetails"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="415dp"
+                android:layout_height="423dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

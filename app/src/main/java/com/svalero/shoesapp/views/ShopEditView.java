@@ -3,6 +3,9 @@ package com.svalero.shoesapp.views;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -23,6 +26,7 @@ import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions;
 import com.mapbox.maps.plugin.gestures.GesturesPlugin;
 import com.mapbox.maps.plugin.gestures.GesturesUtils;
 import com.mapbox.maps.plugin.gestures.OnMapClickListener;
+import com.svalero.shoesapp.IndexView;
 import com.svalero.shoesapp.R;
 import com.svalero.shoesapp.contract.ShopEditContract;
 import com.svalero.shoesapp.domain.Shop;
@@ -31,7 +35,7 @@ import com.svalero.shoesapp.utils.ValidatorUtil;
 
 import java.util.Objects;
 
-public class ShopEdit extends AppCompatActivity implements Style.OnStyleLoaded, OnMapClickListener, ShopEditContract.View {
+public class ShopEditView extends AppCompatActivity implements Style.OnStyleLoaded, OnMapClickListener, ShopEditContract.View {
     private MapView mapView;
     private PointAnnotationManager pointAnnotationManager;
     private GesturesPlugin gesturesPlugin;
@@ -49,10 +53,11 @@ public class ShopEdit extends AppCompatActivity implements Style.OnStyleLoaded, 
         editPresenter = new ShopEditPresenter(this, this);
         Intent intent = getIntent();
 
-        shopId = Long.parseLong(Objects.requireNonNull(intent.getStringExtra("airport_details_id")));
-        editName = intent.getStringExtra("airport_details_name");
-        editLongitude = Double.parseDouble(Objects.requireNonNull(intent.getStringExtra("airport_details_latitude")));
-        editLatitude = Double.parseDouble(Objects.requireNonNull(intent.getStringExtra("airport_details_longitude")));
+        shopId = Long.parseLong(Objects.requireNonNull(intent.getStringExtra("shop_details_id")));
+        Log.d("Shop", "DetailsID " + shopId) ;
+        editName = intent.getStringExtra("shop_details_name");
+        editLongitude = Double.parseDouble(Objects.requireNonNull(intent.getStringExtra("shop_details_latitude")));
+        editLatitude = Double.parseDouble(Objects.requireNonNull(intent.getStringExtra("shop_details_longitude")));
 
 
         EditText nameView = findViewById(R.id.edit_shop_name);
@@ -75,7 +80,7 @@ public class ShopEdit extends AppCompatActivity implements Style.OnStyleLoaded, 
 
     }
 
-    public void editOneAirport(View view) {
+    public void editOneShop(View view) {
         Snackbar snackbar = Snackbar.make(view, "Seguro que quiere editar el registro?", Snackbar.LENGTH_INDEFINITE);
         snackbar.setAction("Editar definitivamente", view1 -> {
 
@@ -89,6 +94,7 @@ public class ShopEdit extends AppCompatActivity implements Style.OnStyleLoaded, 
                         double latitude = Double.parseDouble(editLatitude.getText().toString());
 
                         Shop shop = new Shop(0, name, latitude, longitude);
+                        Log.d("Shop", "DetailsID " + shopId) ;
                         editPresenter.editOneShop(shopId, shop);
 
                     } else {
@@ -120,10 +126,10 @@ public class ShopEdit extends AppCompatActivity implements Style.OnStyleLoaded, 
         pointAnnotationManager.deleteAll();
         currentPoint = point;
         addMarker(point.latitude(), point.longitude(), getString(R.string.here));
-        EditText airportLatitude = findViewById(R.id.edit_shop_latitude);
-        airportLatitude.setText(String.valueOf(point.latitude()));
-        EditText airportLongitude = findViewById(R.id.edit_shop_longitude);
-        airportLongitude.setText(String.valueOf(point.longitude()));
+        EditText shopLatitude = findViewById(R.id.edit_shop_latitude);
+        shopLatitude.setText(String.valueOf(point.latitude()));
+        EditText shopLongitude = findViewById(R.id.edit_shop_longitude);
+        shopLongitude.setText(String.valueOf(point.longitude()));
 
         return false;
     }
@@ -143,6 +149,7 @@ public class ShopEdit extends AppCompatActivity implements Style.OnStyleLoaded, 
 
     }
 
+
     @Override
     public void showMessage(String message) {
         View view = findViewById(R.id.coordinatorLayout);
@@ -159,6 +166,26 @@ public class ShopEdit extends AppCompatActivity implements Style.OnStyleLoaded, 
                 })
                 .setActionTextColor(getResources().getColor(android.R.color.holo_blue_light));
         snackbar.show();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_bar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.home) {
+            Intent intent = new Intent(this, IndexView.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == R.id.shop) {
+            Intent intent = new Intent(this, ShopListView.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
 

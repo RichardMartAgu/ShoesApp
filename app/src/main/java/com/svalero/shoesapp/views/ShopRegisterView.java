@@ -3,6 +3,8 @@ package com.svalero.shoesapp.views;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -23,6 +25,7 @@ import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions;
 import com.mapbox.maps.plugin.gestures.GesturesPlugin;
 import com.mapbox.maps.plugin.gestures.GesturesUtils;
 import com.mapbox.maps.plugin.gestures.OnMapClickListener;
+import com.svalero.shoesapp.IndexView;
 import com.svalero.shoesapp.R;
 import com.svalero.shoesapp.contract.ShopRegisterContract;
 import com.svalero.shoesapp.domain.Shop;
@@ -114,6 +117,26 @@ public class ShopRegisterView extends AppCompatActivity implements Style.OnStyle
                 .bearing(-17.6)
                 .build();
         mapView.getMapboxMap().setCamera(cameraPosition);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_bar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.home) {
+            Intent intent = new Intent(this, IndexView.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == R.id.shop) {
+            Intent intent = new Intent(this, ShopListView.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

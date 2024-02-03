@@ -32,7 +32,7 @@ public class ShopEditModel implements ShopEditContract.Model {
             @Override
             public void onResponse(Call<Shop> call, Response<Shop> response) {
                 if (response.code() == HTTP_NO_CONTENT) {
-                    Log.e("editAirport", response.message());
+                    Log.e("editShop", response.message());
                     listener.onLoadEditOneShopSuccess();
                     Toast.makeText(context, "Editado con éxito", Toast.LENGTH_SHORT).show();
                 } else if (response.code() == HTTP_BAD_REQUEST) {

@@ -109,8 +109,8 @@ public class ShopDetailsView extends AppCompatActivity implements ShopDetailsCon
     private void setCameraPosition(Point point) {
         CameraOptions cameraPosition = new CameraOptions.Builder()
                 .center(point)
-                .pitch(0.0)
-                .zoom(11.0)
+                .pitch(45.0)
+                .zoom(15.5)
                 .bearing(-17.6)
                 .build();
         mapViewDetails.getMapboxMap().setCamera(cameraPosition);
